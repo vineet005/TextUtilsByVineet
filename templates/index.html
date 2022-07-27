@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TextUtils By Vineet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">TextUtilsByVineet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+    <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+   </nav>
+
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Welcome to TextUtils!!</strong>  You can edit your text here.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+<div class="container">
+    <!CSRF Token is used to provide security to our project. It protects our project from attackers that can attack on user's behalf.>
+    <form action ='/analyze' method='post' > {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Enter Your Text Here and Let TextUtils Do The Work</label>
+            <textarea name='text' class="form-control" id="exampleFormControlTextarea1" rows="8"></textarea>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="removepunc" type="checkbox" role="switch" id="flexSwitchCheckDefault1">
+            <label class="form-check-label" for="flexSwitchCheckDefault1">RemovePunctuations</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="fullcaps" type="checkbox" role="switch" id="flexSwitchCheckDefault2">
+            <label class="form-check-label" for="flexSwitchCheckDefault2">UPPERCASE</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="newlineremover" type="checkbox" role="switch" id="flexSwitchCheckDefault3">
+            <label class="form-check-label" for="flexSwitchCheckDefault3">NewLineRemover</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="extraspaceremover" type="checkbox" role="switch" id="flexSwitchCheckDefault4">
+            <label class="form-check-label" for="flexSwitchCheckDefault4">ExtraSpaceRemover</label>
+        </div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" name="charcount" type="checkbox" role="switch" id="flexSwitchCheckDefault5">
+            <label class="form-check-label" for="flexSwitchCheckDefault5">CharacterCounter</label>
+        </div>
+        <button type="submit" class="btn btn-dark mt-2">AnalyzeText</button>
+    </form>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
